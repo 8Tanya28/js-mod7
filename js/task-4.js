@@ -24,5 +24,5 @@ const countIncrem = function () {
   myValue.textContent = counterValue;
 };
 
-decr.addEventListener("click", countDecrem);
-incr.addEventListener("click", countIncrem);
+decrem.addEventListener("click", countDecrem);
+increm.addEventListener("click", countIncrem);
