@@ -29,7 +29,8 @@ const createGalery = images
 
 galeryList.insertAdjacentHTML("afterbegin", createGalery);
 
-// galeryList.style.
+// galeryList.style{
+//   border: 3px solid #bdbdbd;}
 
 // 2 variant
 // const galleryListEl = document.querySelector("ul");

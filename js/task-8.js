@@ -15,3 +15,22 @@
 //   <button type="button" data-action="destroy">Очистити</button>
 // </div>
 // <div id="boxes"></div>
+
+const amount = [];
+
+const refs = {
+  div: document.querySelector("#boxes"),
+  input: document.querySelector("input"),
+};
+console.log(input);
+function createBoxes(amount) {
+  let z = 0;
+  for (let i = 1; i <= amount; i++) {
+    z += 1;
+    const div = document.createElement("div");
+    div.style.border = "1px solid blue";
+    div.style.margin = "10px";
+    div.append(div);
+  }
+}
+createBoxes(amount);
