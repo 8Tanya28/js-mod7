@@ -16,13 +16,42 @@
 // </div>
 // <div id="boxes"></div>
 
-const refs = {
-  boxes: document.querySelector("#boxes"),
-  renderBtn: document.querySelector('[data-action="render"]'),
-  destroyBtn: document.querySelector('[data-action="destroy"]'),
-  input: document.querySelector("input"),
-};
+const boxes = document.querySelector("#boxes");
+const renderButton = document.querySelector('[data-action="render"]');
+const destroyButton = document.querySelector('[data-action="destroy"]');
+const inputArea = document.querySelector("input");
 
-renderBtn.addEventListener("click", () => {
-  return input.value;
+function createBoxes(amount) {
+  let basicWidth = 30;
+  let basicHeight = 30;
+
+  for (let i = 0; i < amount; i += 1) {
+    const someDiv = document.createElement("div");
+
+    let randomNumberForRed = Math.random() * (0, 255) + 0;
+    let randomNumberForGreen = Math.random() * (0, 255) + 0;
+    let randomNumberForBlue = Math.random() * (0, 255) + 0;
+
+    if (i > 0) {
+      basicWidth += 10;
+      basicHeight += 10;
+    }
+
+    someDiv.style.width = basicWidth + "px";
+    someDiv.style.height = basicHeight + "px";
+    someDiv.style.backgroundColor = `rgb(${randomNumberForRed}, ${randomNumberForGreen}, ${randomNumberForBlue})`;
+
+    boxes.appendChild(someDiv);
+  }
+}
+
+function destroyBoxes() {
+  const allBoxes = boxes.querySelectorAll("div");
+  allBoxes.forEach((box) => boxes.removeChild(box));
+}
+
+renderButton.addEventListener("click", () => {
+  createBoxes(inputArea.value);
 });
+
+destroyButton.addEventListener("click", destroyBoxes);
